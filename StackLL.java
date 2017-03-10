@@ -30,14 +30,16 @@ public class StackLL<T> implements Stack {
     }
 
     @Override
-    public Object pop() {
+    public Object pop() throws StackEmptyException {
+        if (size() == 0) throw new StackEmptyException("Empty stack");
         T element = ll.first();
         ll = ll.tail();
         return element;
     }
 
     @Override
-    public Object top() {
+    public Object top() throws StackEmptyException {
+        if (size() == 0) throw new StackEmptyException("Empty stack");
         return ll.first();
     }
 }

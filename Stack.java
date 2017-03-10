@@ -25,10 +25,10 @@ public interface Stack<T> {
     /**
      * @return the top element of the stack and removes it from the stack
      */
-    T pop();
+    T pop() throws StackEmptyException;
 
     /**
      * @return the top element of the stack
      */
-    T top();
+    T top() throws StackEmptyException;
 }
